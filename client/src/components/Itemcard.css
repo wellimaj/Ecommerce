@@ -1,0 +1,118 @@
+/* .itemcard{
+    margin:20px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    width:300px;
+    background-color: beige;
+    align-items: center;
+}
+.itemcard img{
+    bored
+    
+}
+.second-item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.left-cart{
+    float:left;
+
+}
+.cart-inc{
+    float: right;
+} */
+
+.itemcard{
+    display: flex;
+    /* background-color: rgb(167, 167, 16); */
+    flex-direction: column;
+    margin: 10px;
+    width: 30%;
+    height: 50vh;
+}
+
+.itemcard img{
+    margin: 0 auto;
+    width: 100px;
+    height: auto;
+    /* height: 300px;
+    display: block; */
+}
+.first-div{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 10px auto;
+}
+.first-div div{
+    margin: 3px auto;
+}
+.second-item{
+    /* background-color: blueviolet; */
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.views{
+    text-align: center;
+    margin: 5px auto;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    color: grey;
+    /* background-color: brown; */
+}
+.cart-inc{
+    
+    display: flex;
+    justify-content: center;
+/* background-color: cadetblue; */
+}
+/* .cart-inc button{
+    margin: 1px 3px;
+} */
+
+.m-btn, .p-btn{
+    padding: .5rem 10px;
+    margin: 0 5px;
+    font-size: 1rem;
+}
+.cart-inc button{
+    border-radius: 4px;
+    background-color: #141414;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.cart-inc button:hover{
+    background-color: #fff;
+    color: #141414;
+}
+.total-item{
+    font-size: 1.4rem;
+    margin-top: 5px;
+    font-weight: bold;
+}
+.pname{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Bebas Neue', cursive;
+font-family: 'Inter', sans-serif;
+font-family: 'Lato', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Readex Pro', sans-serif;
+}
+.pdescription{
+    font-family: 'Lato', sans-serif;
+    font-weight:bold;
+}
+.price{
+    font-family: 'Lato', sans-serif;
+    font-weight: bolder;
+}

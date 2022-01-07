@@ -1,0 +1,58 @@
+.nav-bowl {
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  height: 62px;
+  color: #fff;
+  background-color: #141414;
+  align-items: center;
+  width: 100%;
+}
+.nav-bowl img {
+  height: inherit;
+}
+a {
+  text-decoration: None;
+  height: inherit;
+}
+.nav-bowl .name {
+  float: left;
+  font-size: 2rem;
+  font-family: "Bebas Neue", cursive;
+  font-family: "Inter", sans-serif;
+  font-family: "Raleway", sans-serif;
+  font-family: "Readex Pro", sans-serif;
+}
+.right-nav {
+    color:#fff;
+  font-size: 1rem;
+  font-family: "Bebas Neue", cursive;
+  font-family: "Inter", sans-serif;
+  font-family: "Raleway", sans-serif;
+  font-family: "Readex Pro", sans-serif;
+}
+.right-nav-logged {
+  width: 393px;
+
+  font-size: 1rem;
+  font-family: "Bebas Neue", cursive;
+  font-family: "Inter", sans-serif;
+  font-family: "Raleway", sans-serif;
+  font-family: "Readex Pro", sans-serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.right-nav-logged div {
+  padding-right: 20px;
+}
+a:-webkit-any-link {
+    color: white;
+    cursor: pointer;
+    text-decoration: underline;
+    
+}
+a:-webkit-any-link:hover {
+    color:rgb(43, 201, 37);
+}
+
