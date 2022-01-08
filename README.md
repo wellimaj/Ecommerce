@@ -6,10 +6,17 @@ features:
 3. items data being stored in database
 4. react front end with lifecycle hooks
 5. expressJS backend
+
+
 commands :
+
+
 npm run dev to start express server
 npm start to start react app
 mongo to connect mongodb in cmd
+
+
+
 known issues im working to fix:
 does not redirect to main page after login
 some issue in registration
