@@ -6,6 +6,7 @@ export default ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [Data, setData] = useState([]);
+  const [Cart, setCart] = useState([]);
 
   useEffect(() => {
     AuthService.isAuthenticated().then((data) => {
@@ -18,14 +19,14 @@ export default ({ children }) => {
         setData(data);
       });
     });
-  }, []);
+  }, [isAuthenticated]);
   return (
     <div>
       {!isLoaded ? (
-        <h1>Loadingg</h1>
+        <h1>Loading</h1>
       ) : (
         <AuthContext.Provider
-          value={{ user, setUser, isAuthenticated, setIsAuthenticated, Data }}
+          value={{ user, setUser, isAuthenticated, setIsAuthenticated, Data,Cart ,setCart}}
         >
           {children}
         </AuthContext.Provider>

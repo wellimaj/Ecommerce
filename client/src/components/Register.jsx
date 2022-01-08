@@ -12,7 +12,8 @@ export default function Register(props) {
     AuthService.register(user).then((data) => {
       const { username,password } = data;
       console.log("hello", data);
-      
+       AuthContext.setUser(data);
+       AuthContext.setIsAuthenticated(true);
     });
   };
   return (

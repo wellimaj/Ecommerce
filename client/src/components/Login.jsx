@@ -11,16 +11,18 @@ export default function Login(props) {
   };
   const onSubmit = (e) => {
     e.preventDefault();
+
     AuthService.login(user)
       .then((data) => {
-        const { isAuthenticated, user } = data;
-        console.log("hello", AuthContext);
+        const { isAuthenticated, userd } = data;
+       console.log(data)
         if (isAuthenticated) {
-          console.log("hi");
+          //console.log(user)
           AuthContext.setUser(user);
-          AuthContext.setAuthenticated(isAuthenticated);
-
+          AuthContext.setIsAuthenticated(isAuthenticated);
+         
         }
+         
       })
       .catch((err) => {
         console.log(err);
@@ -45,7 +47,7 @@ export default function Login(props) {
         ></input>
 
         <button type="submit">
-          <a href="/">Log in</a>
+          <Link to='/'>login</Link>
         </button>
       </form>
     </div>

@@ -6,8 +6,9 @@ export default function Itemcard(props) {
   const { isAuthenticated, user, setIsAuthenticated, setUser } =
     useContext(AuthContext);
   const [cart, setCart] = useState(0);
-  console.log(clicks);
-    function Carthandler ()  {
+  console.log(_id)
+  //console.log(clicks);
+    async function Carthandler ()  {
       return fetch("/user/cart/post", {
         method: "post",
         body: JSON.stringify([{BoughtItem:_id},{count:cart}]),
@@ -20,7 +21,7 @@ export default function Itemcard(props) {
     };
   return (
     <>
-      <div className="itemcard">
+      <div className="itemcard" >
         <img src={image} alt="product"></img>
         <div className="first-div">
           <div className="pname">{name}</div>

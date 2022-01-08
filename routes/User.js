@@ -19,6 +19,7 @@ const signToken = (userID) => {
 
 userRouter.post("/register", (req, res) => {
   const { username, password } = req.body;
+  console.log(req.body);
   User.find({ username }, (err, user) => {
     if (err)
       res.status(500).json({
@@ -67,6 +68,7 @@ userRouter.post(
   (req, res) => {
     if (req.isAuthenticated()) {
       const { _id, username, role, cart } = req.user;
+      console.log(username);
       const token = signToken(_id);
       res.cookie("access_token", token, { httpOnly: true, sameSite: true });
       res
@@ -96,9 +98,8 @@ userRouter.get("/products", async (req, res) => {
   //console.log(products);
   res.json({ products });
 });
-userRouter.post("/veiwed",async (req,res)=>{
-  
-})
-
+userRouter.post("/veiwed", async (req, res) => {
+  console.log(res);
+});
 
 module.exports = userRouter;

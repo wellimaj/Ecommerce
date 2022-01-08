@@ -13,7 +13,7 @@ export default function Navbar(props) {
       {
         console.log(data)
         const {username,cart,role,success}=data
-        setUser(user.username)
+        setUser(data)
         setIsAuthenticated(false)
       })
     }
@@ -37,7 +37,7 @@ export default function Navbar(props) {
     }
   const authenticatedNavbar = () => {
     return (
-      <div class="right-nav-logged">
+      <div className="right-nav-logged">
         <div>
           <button onClick={handleLogout}>Logout</button>
         </div>
