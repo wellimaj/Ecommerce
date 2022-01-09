@@ -1,6 +1,7 @@
 import React, { useState,useContext } from "react";
 import AuthService from "../Services/AuthService";
 import { AuthContext } from "../Context/AuthContext";
+import { Link } from "react-router-dom";
 
 export default function Login(props) {
    const {
@@ -51,7 +52,9 @@ export default function Login(props) {
           placeholder="Enter password"
         ></input>
 
-        <button type="submit"></button>
+        <button type="submit">
+          <a href='/'>Login</a>
+        </button>
       </form>
     </div>
   );

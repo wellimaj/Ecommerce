@@ -10,10 +10,14 @@ export default {
     })
       .then((res) =>{
         
-        if(res.status!==401)
-        return res.json().then(data=>data);
+        if(res.status!==401){
+          
+        return res.json().then(data=>{
+          console.log(data)
+          return data});
+        }
         else
-        return {isAuthenticated:false,user:{username:"",role:""}}
+        return {isAuthenticated:false,user:{username:"",cart:[]}}
       }
       )
   },

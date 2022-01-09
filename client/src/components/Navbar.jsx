@@ -6,7 +6,7 @@ import "./Navbar.css";
 import AuthService from "../Services/AuthService";
 
 export default function Navbar(props) {
-  const { isAuthenticated, user, setIsAuthenticated, setUser } =
+  const { isAuthenticated, user, setIsAuthenticated, setUser, cartcount } =
     useContext(AuthContext);
     function handleLogout(){
       AuthService.logout().then((data)=>
@@ -43,7 +43,7 @@ export default function Navbar(props) {
         </div>
         <div>logged in as {user.username}</div>
         <div>
-          <Link to="/cart">cart</Link>
+          <Link to="/cart">cart({cartcount})</Link>
         </div>
       </div>
     );}

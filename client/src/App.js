@@ -4,7 +4,8 @@ import Navbar from "./components/Navbar";
 import Products from "./components/Products";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
+import Cart from "./components/Cart";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
  function App() {
   return (
@@ -14,6 +15,7 @@ import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
         <Route path="/" element={<Products />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </BrowserRouter>
   );}

@@ -1,13 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
+
 import App from "./App";
 import AuthProvider from "./Context/AuthContext";
-import Navbar from "./components/Navbar"
+
 ReactDOM.render(
   <React.StrictMode>
     <AuthProvider>
-      
       <App />
     </AuthProvider>
   </React.StrictMode>,

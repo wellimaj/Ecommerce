@@ -1,31 +1,33 @@
 import React, { useState ,useContext} from "react";
 import "./Itemcard.css";
 import { AuthContext } from "../Context/AuthContext";
+import { Link } from "react-router-dom";
 export default function Itemcard(props) {
   const { image, name, description, price, clicks ,_id} = props.item;
-  const { isAuthenticated, user, setIsAuthenticated, setUser } =
+  const { Cartarr, setCartarr, cartcount, setCartcount } =
     useContext(AuthContext);
   const [cart, setCart] = useState(0);
-  console.log(_id)
+const [bought,setBought]=useState(false)
+  //console.log(_id)
   //console.log(clicks);
-    async function Carthandler ()  {
-      return fetch("/user/cart/post", {
-        method: "post",
-        body: JSON.stringify([{BoughtItem:_id},{count:cart}]),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-        .then((res) => res.json())
-        .then((data) => data);
-    };
+  function Carthandler(name,cart){
+   
+    if(cart>0){
+       setBought(true);
+      setCartcount(cartcount+cart);
+    setCartarr([...Cartarr,{name: {  cart, image, price }}]);
+    console.log(Cartarr);
+    }else{
+      alert("add atleast 1 item to be added to your cart")
+    }
+  }
   return (
     <>
-      <div className="itemcard" >
+      <div className="itemcard">
         <img src={image} alt="product"></img>
         <div className="first-div">
           <div className="pname">{name}</div>
-          <div  className="pdescription">{description}</div>
+          <div className="pdescription">{description}</div>
           <div className="price">Rs. {price}</div>
         </div>
 
@@ -36,24 +38,44 @@ export default function Itemcard(props) {
           <div className="cart-inc">
             <button
               onClick={() => {
-                if (cart === 0) {
-                  return;
-                } else {
+                if (cart === 1) {
+                  setBought(false);
                   setCart(cart - 1);
+                  return;}
+                if (cart==0){
+                  return
+                }
+                 else {
+                  setCart(cart-1)
                 }
               }}
-            className="m-btn">
+              className="m-btn"
+            >
               -
             </button>
             <div className="total-item">{cart}</div>
-            <button onClick={() => setCart(cart + 1)} className="p-btn">+</button>
             <button
               onClick={() => {
-                Carthandler(user);
+                
+                setCart(cart + 1);
               }}
+              className="p-btn"
             >
-              add to cart
+              +
             </button>
+            {!bought ? (
+              <button
+                onClick={() => {
+                  Carthandler(name, cart, image, price);
+                }}
+              >
+                add to cart
+              </button>
+            ) : (
+              <Link to="/cart">
+                <button>go to cart</button>
+              </Link>
+            )}
           </div>
         </div>
       </div>
