@@ -1,28 +1,33 @@
-import React, { useState, useContext } from "react";
+import React, { useState,useContext } from "react";
 import AuthService from "../Services/AuthService";
 import { AuthContext } from "../Context/AuthContext";
-import { Link } from "react-router-dom";
 
 export default function Login(props) {
-  const [user, SetUser] = useState({ username: "", password: "" });
+   const {
+     isAuthenticated,
+     user,
+     setIsAuthenticated,
+     setUser,
+     Cartarr,
+     setCartarr,
+   } = useContext(AuthContext);
+  const [curruser, SetcurrUser] = useState({ username: "", password: "" });
   const onChange = (e) => {
     e.preventDefault();
-    SetUser({ ...user, [e.target.name]: e.target.value });
+    SetcurrUser({ ...curruser, [e.target.name]: e.target.value });
   };
   const onSubmit = (e) => {
     e.preventDefault();
 
-    AuthService.login(user)
+    AuthService.login(curruser)
       .then((data) => {
-        const { isAuthenticated, userd } = data;
-       console.log(data)
+        const { isAuthenticated, user } = data;
+        console.log(data);
         if (isAuthenticated) {
           //console.log(user)
-          AuthContext.setUser(user);
-          AuthContext.setIsAuthenticated(isAuthenticated);
-         
+          setUser(user);
+          setIsAuthenticated(isAuthenticated);
         }
-         
       })
       .catch((err) => {
         console.log(err);
@@ -46,9 +51,7 @@ export default function Login(props) {
           placeholder="Enter password"
         ></input>
 
-        <button type="submit">
-          <Link to='/'>login</Link>
-        </button>
+        <button type="submit"></button>
       </form>
     </div>
   );
