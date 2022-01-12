@@ -1,4 +1,4 @@
-# Ecommerece
+# Ecommerce
 Full stack project
 features:
 1. Login/register/logout functionality 
