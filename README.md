@@ -16,11 +16,3 @@ npm start to start react app
 mongo to connect mongodb in cmd
 
 
-
-known issues im working to fix:
-does not redirect to main page after login
-some issue in registration
-cart functionality to be added yet
-views counter to be added
-
-
