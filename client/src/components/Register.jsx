@@ -1,7 +1,10 @@
 import React, { useState, useContext } from "react";
 import AuthService from "../Services/AuthService";
 import { AuthContext } from "../Context/AuthContext";
+import './register.css'
+
 export default function Register(props) {
+  const {isAuthenticated, setIsAuthenticated, setUser} = useContext(AuthContext)
   const [user, SetUser] = useState({ username: "", password: "" });
   const onChange = (e) => {
     e.preventDefault();
@@ -11,14 +14,14 @@ export default function Register(props) {
     e.preventDefault();
     AuthService.register(user).then((data) => {
       const { username,password } = data;
-      console.log("hello", data);
-       AuthContext.setUser(data);
-       AuthContext.setIsAuthenticated(true);
+       setUser(data);
+       setIsAuthenticated(true);
+       
     });
   };
   return (
     <div>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} className="myform">
         <label htmlFor="username">choose Username:</label>
         <input
           type="text"

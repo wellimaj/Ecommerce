@@ -7,10 +7,9 @@ export default ({ children }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [Data, setData] = useState([]);
   const [Cartarr, setCartarr] = useState([]);
- const [cartcount, setCartcount] = useState(0);
+  const [cartcount, setCartcount] = useState(0);
   useEffect(() => {
     AuthService.isAuthenticated().then((data) => {
-        
       setUser(data.user);
       setIsAuthenticated(data.isAuthenticated);
       setIsLoaded(true);
@@ -23,7 +22,7 @@ export default ({ children }) => {
   return (
     <div>
       {!isLoaded ? (
-        <h1>Loading</h1>
+        <h1>Loading...</h1>
       ) : (
         <AuthContext.Provider
           value={{

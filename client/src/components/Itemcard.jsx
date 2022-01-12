@@ -10,12 +10,13 @@ export default function Itemcard(props) {
 const [bought,setBought]=useState(false)
   //console.log(_id)
   //console.log(clicks);
-  function Carthandler(name,cart){
-   
+  function Carthandler(itemname,cart,image,price){
+  // console.log(itemname)
     if(cart>0){
        setBought(true);
       setCartcount(cartcount+cart);
-    setCartarr([...Cartarr,{name: {  cart, image, price }}]);
+
+    setCartarr([...Cartarr,[itemname,cart,image,price] ]);
     console.log(Cartarr);
     }else{
       alert("add atleast 1 item to be added to your cart")
@@ -42,7 +43,7 @@ const [bought,setBought]=useState(false)
                   setBought(false);
                   setCart(cart - 1);
                   return;}
-                if (cart==0){
+                if (cart===0){
                   return
                 }
                  else {
